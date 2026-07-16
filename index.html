@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>67 — Karakter</title>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+<style>
+  :root {
+    --bg: #fbfbfd;
+    --fg: #1d1d1f;
+    --muted: #6e6e73;
+    --line: rgba(0,0,0,0.08);
+    --stage: #f5f5f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #000;
+      --fg: #f5f5f7;
+      --muted: #86868b;
+      --line: rgba(255,255,255,0.12);
+      --stage: #1c1c1e;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    padding: 32px 24px 20px;
+    text-align: center;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  header p {
+    margin-top: 6px;
+    font-size: 15px;
+    color: var(--muted);
+  }
+  main {
+    flex: 1;
+    padding: 0 24px 24px;
+    display: flex;
+  }
+  model-viewer {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    min-height: 60vh;
+    flex: 1;
+    background: var(--stage);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    --poster-color: transparent;
+    --progress-bar-color: var(--fg);
+  }
+  footer {
+    padding: 16px 24px 32px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .hint {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>67 — Karakter</h1>
+    <p>Siyah hoodie, kargo pantolon, bot. T-pose.</p>
+  </header>
+
+  <main>
+    <model-viewer
+      src="karakter.glb"
+      alt="67 karakter — siyah hoodie ve kargo pantolonlu 3D karakter"
+      camera-controls
+      auto-rotate
+      auto-rotate-delay="1200"
+      rotation-per-second="18deg"
+      environment-image="neutral"
+      exposure="1.05"
+      shadow-intensity="0.6"
+      camera-orbit="20deg 82deg 5.2m"
+      field-of-view="30deg"
+      min-field-of-view="8deg"
+      touch-action="pan-y">
+    </model-viewer>
+  </main>
+
+  <footer>
+    <span class="hint">Sürükle: döndür &nbsp;·&nbsp; Kaydır: yakınlaştır &nbsp;·&nbsp; Sağ tık: kaydır</span>
+  </footer>
+</body>
+</html>
